@@ -1,0 +1,814 @@
+/* font-family: 'Caveat', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Lato', sans-serif; */
+
+
+
+
+
+
+
+/* This code ensures elements include their border and padding in their size (box-sizing). It removes default margin and padding, eliminates underlines on links (text-decoration), and hides outlines on focus, enhancing page appearance and layout. */
+*,*::after,*::before{
+    /* -webkit-box-sizing is a vendor-prefixed property used in WebKit-based browsers (such as older versions of Safari and Chrome) (the "-webkit" prefix stands for WebKit). It sets the box-sizing property for elements specifically in WebKit-based browsers. */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;  
+    /* -moz-box-sizing is a vendor-prefixed property used in Mozilla Firefox (the "-moz" prefix stands for Mozilla). It sets the box-sizing property for elements specifically in Firefox. */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+
+
+/* :root is a CSS pseudo-class that represents the highest-level parent element in an HTML document, which is typically the <html> element.This code defines custom colors and fonts for a webpage using CSS variables. These variables make it easy to change colors and fonts across the site by just updating these values in one place, which can help maintain a consistent design. */
+:root{
+    /* background-color */
+    --bg-white:#fff;
+    --bg-dark-color:#03262c;
+
+    /* text-color */
+    --primary-text:#061738;
+    --secondary-color:#60cd12;
+    --light-color:#e2f6de;
+    --dark-color:#03262c;
+    --text-white:#fff;
+    --text-gray:#dee2e6;
+    --anchor-color:#007aff;
+
+    /* font_family */
+    --primary-font:'Caveat';
+    --secondary-font:'Lato';
+    --third-font:'Raleway';
+
+
+}
+
+
+
+
+
+
+
+/* body and html styles define the overall text color, font size, and font family for the entire webpage. They also enable smooth scrolling and set the line height.
+Headings (h1, h2, h3, h4, h5) and paragraphs (p) styles customize their appearance, adjusting properties like font size, weight, color, and line height to achieve a specific design.
+Overall, this code helps maintain a cohesive visual style for text elements on the website */
+body,html{
+    color: var(--primary-text);
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    scroll-behavior: smooth;
+    line-height: 1.5;
+
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+h1 {
+    /* font-size: 9rem; */
+    font-family: 'Caveat';
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+h2{
+    color: var(--primary-text);
+    font-size: 4.7rem;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+h3{
+    font-size: 3.1rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+h4{
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--primary-text);
+}
+
+h5{
+    font-size: 1.8rem;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+p{
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    color: var(--primary-text);
+    font-family: var(--secondary-font);
+}
+
+
+
+
+
+
+
+
+/* What this means is that these elements will never be wider than their container or the viewport. It helps ensure that multimedia elements (images, videos, and objects) automatically scale down to fit the available space, making the webpage responsive and preventing content from overflowing or causing layout issues. */
+embed,iframe,img,object{
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* This code cleans up the default styling for lists and links, making them more visually appealing and consistent. It removes list item markers, underlines on links, and focus outlines. Links inside list items are made white in color. */
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a,a:active,a:focus,a:hover,button{
+    text-decoration: none;
+    outline: 0;
+}
+
+li a{
+    color: var(--text-white);
+}
+
+
+
+
+
+
+
+
+
+/* When users hover over links and buttons, this code makes any style changes (like color or size) transition smoothly over 0.3 seconds, creating a nicer visual effect. */
+a:hover,button:hover{
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+
+
+
+
+
+
+/* This code customizes the appearance of scrollbars in WebKit-based browsers, making them wider, giving the track a white background, and coloring the thumb with a specific color. It's a way to enhance the visual style of scrollbars in web content. */
+::-webkit-scrollbar{
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--bg-white);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--secondary-color);
+}
+
+
+
+
+
+
+
+
+
+
+/* This CSS code styles a button by setting its text color to white, creating a green gradient background with a white border, rounding the corners, and applying various text styling. When you hover over the button, it changes the background to white, adjusts text and border colors, creating a visually appealing effect. */
+.main-btn{
+    position: relative;
+    color: var(--bg-white);
+    background: linear-gradient(to right,#0f7404,#5cb917);
+    z-index: 1;
+    overflow: hidden;
+    border: 0.2rem solid var(--bg-white);
+    border-radius: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem 3.5rem;
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+.main-btn:hover{
+    background: var(--bg-white);
+    color: var(--secondary-color);
+    border: 0.2rem solid var(--secondary-color);
+
+}
+
+
+
+
+
+
+
+
+
+/* This CSS code is used to style sections of a webpage. It adds vertical padding to create space around the section content. It styles section titles by adjusting font size, weight, color, and capitalization, with a margin at the bottom. It also styles section subtitles with font size, weight, color, font family, and text alignment properties, along with a margin at the bottom for separation. The code aims to improve the visual layout and readability of webpage sections. */
+section{
+    padding: 5rem 0;
+}
+
+.section-title{
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+}
+
+.section-subtitle{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--primary-text);
+    font-family: var(--secondary-font);
+    max-width: 40%;
+    margin: auto;
+    margin-bottom: 1.5rem;
+}
+
+.about .banner_section,
+.product .banner_section,
+.gallery .banner_section,
+.contact .banner_section,
+.distributors .banner_section{
+    background: url('image/top-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 17rem;
+    padding-bottom: 10rem;
+    min-height: auto;
+}
+
+
+
+/* //////// navbar css ////// */
+
+
+/* This CSS code styles the webpage's header, which is positioned at the top with full width. It includes a navigation bar with a background image and sets its background properties, padding, and size */
+.header{
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+    left: 0;
+    z-index: 2;
+}
+
+
+
+
+
+
+
+
+/* This CSS code styles the navigation bar within the webpage's header. It adds a background image, adjusts its properties such as background repetition, position, and size, and sets padding. Additionally, it styles the branding logo with a specific width and margin adjustments. */
+.header .navbar{
+    background: url('image/header-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 2rem 5rem;
+}
+
+.header .navbar-brand{
+    width: 7.5rem;
+    margin-top: -0.1rem;
+}
+
+
+
+
+
+
+
+/* This CSS code styles navigation links in the webpage's header, specifying their appearance, text transformations, and behaviors when hovered over or marked as active. */
+.header .navbar-nav .nav-link{
+    color: var(--text-white);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    margin: 0 0.2rem;
+    font-family: var(--third-font);
+}
+
+
+.header .navbar-nav .nav-link:hover,
+.header .navbar-nav .nav-item.active .nav-link {
+    color: var(--secondary-color);
+}
+
+
+
+
+
+
+
+
+
+/* This CSS code styles the navigation toggle button in the header, defining its appearance and removing focus-related styling to enhance the button's visual presentation. */
+.header .navbar-toggler{
+    color: white;
+    font-size: 2rem;
+    height: 2.7rem;
+    padding: 0;
+}
+.header .navbar-toggler:focus{
+    outline: none;
+    box-shadow: none;
+} 
+
+
+
+
+
+
+
+
+/* This CSS code styles elements on the right side of the header, setting their text colors, font sizes, and other visual properties to create a specific design for this section of the header. */
+.header .header_right span{
+    color: var(--secondary-color);
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-right: 1rem;
+} 
+.header .header_right .phone_no{
+    color: var(--text-white);
+    font-size: 1.6rem;
+}
+
+
+
+
+
+
+
+/* This CSS code styles the header when it's scrolled down. It fixes the header at the top of the viewport, adjusts its width, centers it, and adds a transition effect for a smoother visual change when scrolling. */
+.header-scrolled{
+    position: fixed;
+    top: -0.4rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+    z-index: 999;
+    transition: 0.3s all ease-in-out;
+}
+
+
+/* banner_section   */
+/* This CSS code styles a banner section on the webpage, setting background properties, adjusting the layout, and adding visual effects like background color and padding to the caption elements. */
+.banner-content h1{
+    font-size: 60px;
+}
+
+.banner_section{
+    background: url('image/Banner-1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 90vh;
+}
+
+.banner_section .carousel-item{
+    padding: 3rem 0;
+    height: 90vh;
+
+}
+
+.banner_section .carousel-caption{
+    top: 30%;
+    bottom: 0;
+    left: 3%;
+    right: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.banner_section .carousel-caption h3{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--dark-color);
+    display: inline;
+}
+
+.banner_section .carousel-caption p{
+    max-width: 40rem;
+    margin-top: 2rem;
+
+}
+
+
+
+
+
+
+
+
+/* feature */
+/* This CSS code styles feature boxes in a feature section on a webpage. It sets transparent backgrounds with light-colored borders, adds padding, and applies smooth transitions for all changes. It also styles feature icons by specifying their size, circular shape, and center alignment. Additionally, it adjusts image widths, adds margins and custom text colors to headings, and creates hover effects by changing background, border, and text colors when feature boxes are hovered over. The border around feature icons is given a circular shape, a light-colored border, and padding, and it is displayed as an inline element. */
+
+.feature_section .features-box{
+    background-color: transparent;
+    border: 0.15rem solid var(--light-color);
+    padding: 8rem 0;
+    transition: all 0.3s;
+}
+
+.feature_section .features-icon-border{
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0.2rem solid var(--light-color);
+    padding: 1.3rem;
+    display: inline-block;
+}
+.feature_section .features-box .features-icon{
+    height: 6.5rem;
+    width: 6.5rem;
+    background-color: var(--light-color);
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature_section .features-box .features-icon img{
+    width: 3.7rem;
+}
+
+.feature_section .features-box h3{
+    margin-top: 1.5rem;
+    color: var(--primary-text);
+}
+
+.feature_section .features-box:hover{
+    background-color: var(--bg-dark-color);
+    border-color: var(--bg-dark-color);
+}
+
+.feature_section .features-box:hover h3{
+    color: var(--text-white);
+}
+
+.feature_section .features-box:hover .features-icon-border{
+    border-color: var(--secondary-color);
+}
+
+
+
+
+/* landing_about_section */
+/* This CSS code is used to style a specific section of the webpage, the "landing_about_section." It sets a background image with various properties like size, repetition, and position to create a visually appealing background. Additionally, it provides a custom text color for paragraph elements within this section and adds margin at the bottom of the paragraphs to control spacing. */
+
+.landing_about_section{
+    background: url('image/about-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 9rem 0;
+}
+
+.landing_about_section p{
+    color: var(--primary-text);
+    margin-bottom: 2rem;
+}
+
+
+
+/* landing_product_section */
+/* This CSS code is used to style product cards within a "landing_product_section." The cards have relative positioning with hidden overflow and a cursor pointer, featuring a light-colored border with padding and smooth transitions. The product images are centered with a margin at the bottom, while the headings use a custom text color. Price details have font adjustments, colors, and line-through text decoration with transitions. Additional product details are absolutely positioned at the bottom, with a dark background and a transition effect. When hovering over a product card, the additional details slide into view. */
+
+.landing_product_section{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0.2rem solid var(--light-color);
+    padding: 2rem 1rem;
+    transition: all 0.3s;
+}
+
+.landing_product_section .product-card .product-img{
+    margin-bottom: 7rem;
+    text-align: center;
+}
+
+.landing_product_section .product-card h3{
+    color: var(--primary-text);
+}
+
+.landing_product_section .product-card span{
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+    text-decoration: line-through;
+    transition: all 0.3s;
+}
+
+.landing_product_section .product-card .product-detail{
+    position: absolute;
+    bottom: -22rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--dark-color);
+    transition: all 0.7s ease;
+}
+
+.landing_product_section .product-card:hover .product-detail{
+    bottom: 0;
+}
+
+
+/* testimonial_section */
+
+/* This CSS code is used to style a testimonial section on the webpage. It sets the background color, adjusts the position of carousel indicators, and defines the appearance of indicator buttons with custom colors and circular shapes. Testimonial cards have background images, text alignment, and padding, with rounded corners for visual appeal. Profile boxes within the cards have a dark background and specific border-radius. Profile images are styled with border-radius, size adjustments, and object-fit properties. Description boxes have left padding for text alignment. */
+.testimonial_section {
+    background-color: var(--light-color);
+    padding-bottom: 8rem;
+}
+
+.testimonial_section .carousel-indicators {
+    bottom: -6rem;
+}
+
+.testimonial_section .carousel-indicators button {
+    background-color: var(--dark-color);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%; /* Set border-radius to 0 for a square shape */
+}
+
+.testimonial_section .card{
+    background: url('image/testimonial-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: right;
+    padding: 5rem 5rem 5rem 0;
+    border-radius: 0.5rem;
+}
+
+.testimonial_section .profile-box{
+    padding: 1.875rem;
+    background-color: var(--dark-color);
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+
+.testimonial_section .profile-box img{
+    border-radius: 0.625rem 3.125rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial_section .desc-box{
+    padding-left: 2.5rem;
+}
+
+
+
+
+
+
+/* gallery_section */
+/*  This CSS code is designed to style images within a "gallery_section." It ensures that these images span the entire width and height of their container, maintaining their aspect ratio and covering the available space. Additionally, a subtle 10-pixel padding is added at the bottom of each image to provide spacing or separation within the gallery section. */
+.gallery_section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-bottom: 10px;
+}
+
+
+/* footer_wrapper */
+
+.footer_wrapper{
+    background: url('image/footer_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 15rem;
+    padding-bottom: 0rem;
+
+}
+
+.footer_wrapper h5{
+    color: var(--text-white);
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer_wrapper ul li{
+    margin-bottom: 0.5rem;
+    list-style: none;
+}
+
+.footer_wrapper .company_details{
+    font-size: 1.4rem;
+}
+
+.footer_wrapper .contact-info li a{
+    color: var(--text-white);
+    font-size: 1.6rem;
+    text-decoration: none;
+
+}
+
+.footer_wrapper .link-widget li a{
+    text-decoration: none!important;
+  }
+
+  .footer_wrapper.link-widget li a, .footer_wrapper p {
+    color: var(--text-gray);
+    font-size: 1.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    text-decoration: none; /* Add this line to remove underlines */
+}
+
+.footer_wrapper .link-widget li a::before {
+    content: '\f105';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0.3rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.footer_wrapper .link-widget li a:hover {
+    margin-left: 0.625rem;
+    color: var(--secondary-color);
+    text-decoration: underline; /* Add this line to underline on hover */
+}
+
+.footer_wrapper .social-network a{
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.2rem;
+    margin: 2rem;
+    display: inline-block;
+    border: 0.125rem solid var(--text-gray);
+    color: var(--text-gray);
+    text-align: center;
+    border-radius: 100%;
+    -webkit-transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1);/*This is a timing function called "cubic-bezier." It defines the rate of change for the transition effect. */
+    transition: all 0.3s cubic-bezier(0.645,0.045,0.355,1);
+
+
+}
+
+.footer_wrapper .social-network a:hover{
+    border-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-white);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0.625rem 0.9375rem 0 rgb(0, 0, 0 /10%) ;
+    transform: translateY(-0.1875rem); /* applies a vertical translation to the anchor elements, moving them upward by 0.1875rem when in the hover state. */
+}
+
+.footer_wrapper .form-control{
+    font-size: 1.5rem;
+    color: var(--text-white);
+}
+
+.footer_wrapper .form-control:focus{
+    outline: none;
+    box-shadow: none;
+    border-color: var(--secondary-color);
+}
+
+.footer_wrapper .copyright-section{
+    background-color: var(--secondary-color);
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.footer_wrapper .copyright-section p{
+    margin-top: 0;
+    padding: 3rem 0;
+    line-height: 0;
+}
+
+.footer_wrapper .copyright-section a{
+    color: var(--primary-text);
+    font-weight: 600;
+}
+
+
+/* about */
+
+
+.about .about-details p{
+    color: var(--primary-text);
+
+}
+
+
+
+/* .product */
+
+.product .product-detail p{
+    margin-bottom: 1.6rem;
+}
+
+
+/* contact */
+.contact .contact-form{
+    background-color: var(--light-color);
+    padding: 5rem;
+    box-shadow: 0 0.2 1.5rem rgb(0, 0, 0, 4%);
+}
+
+.contact .contact-form .form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+.contact .contact-form .form-control::placeholder{
+    color: var(--primary-text);
+}
+
+.contact .contact-form .form-control{
+    padding: 1rem 1.5rem;
+    color: var(--primary-text);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--secondary-font);
+}
+
+.contact .contact-form textarea{
+    min-height: 15rem;
+
+}
+
+.contact .contact-form .info-box li {
+    position: relative;
+    margin: 2.9rem 0;
+    padding: 0;
+}
+
+.contact .contact-form .info-box li i {
+    position: absolute;
+    left: 0;
+    font-size: 4.5rem;
+    line-height: 4.4rem;
+    color: var(--primary-text);
+}
+
+.contact .contact-form .info-box li .info-content {
+    color: var(--primary-text);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contact .contact-form .info-box li p{
+    margin: 0;
+}
+
+.contact .contact-form .info-box li a{
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-family: var(--secondary-font);
+}
+

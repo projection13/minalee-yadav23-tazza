@@ -1,0 +1,46 @@
+@media (max-width:1170px) {
+    .section-subtitle{
+        max-width: 60%;
+    }
+    
+}
+
+@media (max-width:990px) {
+    .about .banner_section,
+    .product .banner_section,
+    .gallery .banner_section,
+    .contact .banner_section{
+        padding-top: 12.5rem;
+        padding-bottom: 3rem;
+    }
+    .header .navbar{
+        background-size: cover;
+        padding: 2rem;
+    }
+    .header.navbar-nav{
+        margin-top: 2rem;
+    }
+    .header .navbar-nav .nav-link{
+        padding: 0.2rem 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .header .header_right span{
+        padding: 0.2rem 0.5rem;
+    } 
+}
+
+/* Adjustments for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 768px) {
+    .footer_wrapper {
+      padding-top: 10rem; /* Reduce top padding */
+    }
+    .footer_wrapper .copyright-section {
+      text-align: center;
+      padding: 1rem 0; /* Adjust padding for smaller screens */
+    }
+    .footer_wrapper .copyright-section p {
+      line-height: 1.5; /* Increase line height to make text more readable */
+    }
+  }
+  
+
